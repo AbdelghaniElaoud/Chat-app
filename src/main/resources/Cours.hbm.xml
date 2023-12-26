@@ -1,0 +1,21 @@
+<!-- Cours.hbm.xml -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="Cours" table="cours">
+        <id name="idCours" type="java.lang.Long">
+            <column name="id_cours"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nom" type="string">
+            <column name="nom" not-null="true"/>
+        </property>
+
+        <property name="coefficient" type="int">
+            <column name="coefficient" not-null="true"/>
+        </property>
+        <property name="sigle" type="string">
+            <column name="sigle" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

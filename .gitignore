@@ -1,0 +1,30 @@
+# IntelliJ
+.idea/
+
+# Maven
+target/
+*.iml
+.idea_modules/
+
+# Compiled class file
+*.class
+
+# Log files
+*.log
+
+# Maven Wrapper
+.mvn/wrapper/
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# User-specific files
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+
+# Exclude build and target directories
+build/
