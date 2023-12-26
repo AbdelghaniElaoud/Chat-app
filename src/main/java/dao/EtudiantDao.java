@@ -1,13 +1,12 @@
 package dao;
 
-import Util.HibernateUtil;
+import util.HibernateUtil;
 import entity.Cours;
 import entity.Etudiant;
 import entity.Horaire;
 import org.hibernate.Session;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;

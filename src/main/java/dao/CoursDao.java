@@ -1,6 +1,6 @@
 package dao;
 
-import Util.HibernateUtil;
+import util.HibernateUtil;
 import dto.CoursDto;
 import entity.Cours;
 import entity.Etudiant;

@@ -1,6 +1,6 @@
 package dao;
 
-import Util.HibernateUtil;
+import util.HibernateUtil;
 import entity.Absence;
 import entity.Cours;
 import org.hibernate.Session;
