@@ -116,8 +116,10 @@ public class EtudiantDao implements IEtudiantDao {
 
             Set<Cours> cours1 = etudiant.getCours();
             cours1.add(cours);
-            Etudiant etudiant1 = new Etudiant(etudiant.getNom(), etudiant.getPrenom(), etudiant.getDateNaissance(), cours1);
-            etudiantDao.modifier(etudiant.getIdEtudiant(), etudiant1);
+//            Etudiant etudiant1 = new Etudiant(etudiant.getNom(), etudiant.getPrenom(), etudiant.getDateNaissance(), cours1);
+//            etudiantDao.modifier(etudiant.getIdEtudiant(), etudiant1);
+            etudiant.setCours(cours1);
+            session.save(etudiant);
 
             session.getTransaction().commit();
         } catch (Exception e) {

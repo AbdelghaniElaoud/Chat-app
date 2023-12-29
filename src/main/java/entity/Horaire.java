@@ -42,6 +42,8 @@ public class Horaire {
         return "Horaire{" +
                 "idHoraire=" + idHoraire +
                 ", dateDebut=" + dateDebut +
+                ", dateFin=" + dateFin +
+                ", days=" + days +
                 '}';
     }
 }

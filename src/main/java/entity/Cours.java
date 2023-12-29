@@ -29,11 +29,17 @@ public class Cours {
 
     @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinTable(
-            name = "Cours_Horaire",
+            name = "cours_horaire",
             joinColumns = @JoinColumn(name = "id_cours"),
             inverseJoinColumns = @JoinColumn(name = "id_horaire")
     )
     private List<Horaire> horaires = new ArrayList<>();
+
+    public Cours(String nom, int coefficient, String sigle) {
+        this.nom = nom;
+        this.coefficient = coefficient;
+        this.sigle = sigle;
+    }
 
 
     public Cours(String nom, int coefficient, String sigle, List<Etudiant> etudiants) {
