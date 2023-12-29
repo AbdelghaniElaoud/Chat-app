@@ -3,13 +3,10 @@ package util;
 import dao.AbsenceDao;
 import dao.CoursDao;
 import dao.EtudiantDao;
-import entity.Cours;
 import entity.Horaire;
-import enums.Days;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalTime;
 import java.util.*;
 
 public class Main {
@@ -76,7 +73,7 @@ public class Main {
             System.out.println("L'emplois est pret!!!");
         }catch (IOException e){
             System.out.println("Il y a un probleme!!");
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
