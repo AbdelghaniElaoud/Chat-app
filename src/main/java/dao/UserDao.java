@@ -26,7 +26,7 @@ public interface UserDao {
     boolean updateProfile(Long userId, String email, String phone);
     boolean updatePassword(Long userId, String password);
     List<User> getAllUsersWithoutAdmins();
-    void activateOrDeactivateUser(Long userId);
+    User activateOrDeactivateUser(Long userId);
     User createUser(String name, String email, String phoneNumber, String s, String password);
 
     boolean exists(String mail);

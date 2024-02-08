@@ -378,7 +378,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void activateOrDeactivateUser(Long userId) {
+    public User activateOrDeactivateUser(Long userId) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
         session.getTransaction().begin();
@@ -390,6 +390,7 @@ public class UserDaoImpl implements UserDao {
         session.persist(user);
 
         session.getTransaction().commit();
+        return user;
     }
 
     /**

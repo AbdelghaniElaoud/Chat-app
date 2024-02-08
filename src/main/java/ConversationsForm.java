@@ -97,7 +97,7 @@ public class ConversationsForm extends JDialog{
     }
 
     private void sendMessage() {
-        String message = tAreaInput.getText().trim();
+        String message = tAreaInput.getText().strip();
         if (isMessageEmpty(message)) {
             JOptionPane.showMessageDialog(ConversationsForm.this, "The message should not be empty", "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -115,7 +115,7 @@ public class ConversationsForm extends JDialog{
     }
 
     private boolean isMessageEmpty(String message) {
-        return message == null || message.trim().isEmpty();
+        return message == null || message.strip().isEmpty();
     }
 
     private void addListSelectionListener() {
