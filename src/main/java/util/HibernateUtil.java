@@ -1,9 +1,6 @@
 package util;
 
-import entity.Absence;
-import entity.Cours;
-import entity.Etudiant;
-import entity.Horaire;
+import entities.*;
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -15,11 +12,13 @@ public class HibernateUtil {
 
     static {
         Configuration cfg = new Configuration().configure();
-        cfg.addAnnotatedClass(Cours.class);
-        cfg.addAnnotatedClass(Etudiant.class);
-        cfg.addAnnotatedClass(Absence.class);
-        cfg.addAnnotatedClass(Horaire.class);
-        cfg.configure();
+        cfg.addAnnotatedClass(User.class);
+        cfg.addAnnotatedClass(Conversation.class);
+        cfg.addAnnotatedClass(InvitationRequest.class);
+        cfg.addAnnotatedClass(Message.class);
+        cfg.addAnnotatedClass(UserConversation.class);
+        cfg.addAnnotatedClass(UserInvitationRequest.class);
+        cfg.addAnnotatedClass(User.class);
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                 .applySettings(cfg.getProperties());
         sessionFactory = cfg.buildSessionFactory(builder.build());
