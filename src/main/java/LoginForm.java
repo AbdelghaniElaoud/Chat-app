@@ -37,9 +37,16 @@ public class LoginForm extends JDialog{
 
             user = getAuthenticatedUser(email, password);
 
-            if (user != null){
+            if (user != null && !user.isActive()) {
+
+                JOptionPane.showMessageDialog(LoginForm.this,
+                        "Your account has been deactivated",
+                        "Contact the admin",
+                        JOptionPane.ERROR_MESSAGE);
+
+            }else if (user != null ){
                 dispose();
-            }else {
+            } else {
                 JOptionPane.showMessageDialog(LoginForm.this,
                         "Email or password is invalid",
                         "Please try again / Contact the admin",
@@ -91,7 +98,7 @@ public class LoginForm extends JDialog{
 
 
 
-            if (userWeFind != null && userWeFind.getPassword().equals(password) && userWeFind.isActive()) {
+            if (userWeFind != null && userWeFind.getPassword().equals(password) ) {
                 user = userWeFind;
                 /*System.out.println("There is a user");*/
             }

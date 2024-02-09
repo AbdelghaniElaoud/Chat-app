@@ -3,7 +3,6 @@ package dao;
 import entities.*;
 import enums.ConversationType;
 import lombok.AllArgsConstructor;
-import lombok.var;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

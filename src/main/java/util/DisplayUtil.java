@@ -8,10 +8,10 @@ public class DisplayUtil {
     public static final int STATE_COLUMN_NUMBER = 5;
 
     public static String displayButtonText(User user) {
-        return user.isActive() ? "Disable" : "Enable";
+        return !user.isActive() ? "Disabled" : "Enabled";
     }
 
     public static String displayState(User user) {
-        return user.isActive() ? "Enabled" : "Disabled";
+        return !user.isActive() ? "Enable" : "Disable";
     }
 }

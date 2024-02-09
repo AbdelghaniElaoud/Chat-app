@@ -38,8 +38,8 @@ public class UserManagementTable extends JFrame{
             data[i][2] = user.getEmail();
             data[i][3] = user.getPhone();
             data[i][4] = user.getRole();
-            data[i][5] = DisplayUtil.displayState(user);
-            data[i][6] = DisplayUtil.displayButtonText(user);
+            data[i][5] = DisplayUtil.displayButtonText(user);
+            data[i][6] = DisplayUtil.displayState(user);
         }
 
 
