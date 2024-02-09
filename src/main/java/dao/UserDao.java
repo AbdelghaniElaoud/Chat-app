@@ -31,4 +31,9 @@ public interface UserDao {
 
     boolean exists(String mail);
 
+    List<User> getTheNonFriendsOfUserById(Long idUser);
+
+    List<UserConversation> getUserConversationOfConversationById(Long userId);
+
+    Long getUserIdByName(String name);
 }

@@ -21,6 +21,7 @@ public class DashboardForm extends JFrame {
     private JButton friendRequestsButton;
     private JButton btnConversations;
     private JButton disconnectButton;
+    private JButton sendFriendRequestsButton;
 
     private Session session;
 
@@ -72,15 +73,6 @@ public class DashboardForm extends JFrame {
 
                 ProfileForm profileForm = new ProfileForm(null,user);
 
-                /*RegistrationForm registrationForm = new RegistrationForm(DashboardForm.this);
-                User user = registrationForm.user;
-
-                if (user != null) {
-                    JOptionPane.showMessageDialog(DashboardForm.this,
-                            "New user: " + user.getName(),
-                            "Successful Registration",
-                            JOptionPane.INFORMATION_MESSAGE);
-                }*/
             }
         });
 
@@ -110,11 +102,17 @@ public class DashboardForm extends JFrame {
                 DashboardForm dashboardForm = new DashboardForm();
             }
         });
+        sendFriendRequestsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UserDaoImpl userDao = new UserDaoImpl();
+
+                SendFriendRequestsUI sendFriendRequestsUI = new SendFriendRequestsUI(userDao.getTheNonFriendsOfUserById(user.getUserId()), user);
+            }
+        });
     }
 
     private void showFriendRequestsDialog(User user) {
-        /*FriendRequestsDialog friendRequestsDialog = new FriendRequestsDialog(this);
-        friendRequestsDialog.setVisible(true);*/
 
         UserDaoImpl userDao = new UserDaoImpl();
 

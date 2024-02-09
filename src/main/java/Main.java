@@ -1,6 +1,7 @@
 import dao.UserDao;
 import dao.UserDaoImpl;
 import entities.User;
+import entities.UserConversation;
 
 import java.util.List;
 
@@ -40,10 +41,10 @@ public class Main {
             System.out.println(conversation);
         }*/
 
-        List<User> users = userDao.getAllUsersWithoutAdmins();
+        List<User> users = userDao.getTheNonFriendsOfUserById(2L);
 
         for (User user:users){
-            System.out.println(user);
+            System.out.println(user.getUserId());
         }
 
         /*Session session = HibernateUtil.getSessionFactory().getCurrentSession();

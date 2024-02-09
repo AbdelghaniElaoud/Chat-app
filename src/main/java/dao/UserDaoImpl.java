@@ -9,9 +9,7 @@ import org.hibernate.query.Query;
 import util.HibernateUtil;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 
 @AllArgsConstructor
@@ -447,6 +445,75 @@ public class UserDaoImpl implements UserDao {
         session.getTransaction().commit();
 
         return result != null;
+    }
+
+    @Override
+    public List<User> getTheNonFriendsOfUserById(Long idUser) {
+
+        List<Conversation> conversations = getUserConversations(idUser);
+        List<User> users = getAllUsersWithoutAdmins();
+
+        Set<Long> userConversationsSet = new HashSet<>();
+
+        for (Conversation conversation : conversations){
+            List<UserConversation> userConversations = getUserConversationOfConversationById(conversation.getConversationId());
+             for (UserConversation userConversation : userConversations){
+                  userConversationsSet.add(userConversation.getUser().getUserId());
+             }
+        }
+
+        List<User> nonFriends = new ArrayList<>();
+
+        for (User user:users){
+            if (!userConversationsSet.contains(user.getUserId())){
+                nonFriends.add(user);
+            }
+        }
+
+        nonFriends.remove(idUser);
+
+
+        return nonFriends;
+    }
+
+    @Override
+    public List<UserConversation> getUserConversationOfConversationById(Long conversationId) {
+
+
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        session.getTransaction().begin();
+
+        String hql = "SELECT uc FROM UserConversation uc " +
+                "WHERE uc.conversation.conversationId = :specificConversationId";
+
+        List<UserConversation> userConversations = session.createQuery(hql, UserConversation.class)
+                .setParameter("specificConversationId", conversationId)
+                .getResultList();
+
+        session.getTransaction().commit();
+        return userConversations;
+
+    }
+
+    @Override
+    public Long getUserIdByName(String name) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        session.getTransaction().begin();
+
+        String hql = "SELECT u.userId FROM User u WHERE u.name = :userName";
+
+        Long userId = session.createQuery(hql, Long.class)
+                .setParameter("userName", name)
+                .getSingleResult();
+
+
+
+        session.getTransaction().commit();
+
+
+        return userId;
     }
 
 

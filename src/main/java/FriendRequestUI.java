@@ -70,7 +70,6 @@ public class FriendRequestUI extends JFrame {
                             User theAcceptedUser = session.find(User.class, invitationRequest.getInvitationRequest().getSenderId());
                             session.getTransaction().commit();
 
-                            // Your logic here
                             if (var) {
                                 userDao.acceptOrDeclineAnInvitation(invitationRequest.getId(), true);
                                 userDao.createConversation(user,theAcceptedUser);
