@@ -33,6 +33,8 @@ public class DashboardForm extends JFrame {
         setContentPane(dashboardPanel);
         setMinimumSize(new Dimension(450,474));
         setSize(450,474);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         boolean hasRegisteredUsers = connectToDatabase();

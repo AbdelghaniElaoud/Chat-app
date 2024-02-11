@@ -19,6 +19,8 @@ public class ChangePasswordForm extends JDialog {
         this.user = user;
         setTitle("Profile");
         setContentPane(mainPanel);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setMinimumSize(new Dimension(520,474));
         setModal(true);
         setLocationRelativeTo(null);

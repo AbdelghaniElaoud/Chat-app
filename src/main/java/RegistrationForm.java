@@ -40,6 +40,8 @@ public class RegistrationForm extends JDialog{
         setMinimumSize(new Dimension(470,474));
         setModal(true);
         setLocationRelativeTo(parent);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         btnRegister.addActionListener(new ActionListener() {

@@ -38,6 +38,8 @@ public class ConversationsForm extends JDialog{
 
     private void initComponents() {
         JFrame frame = new JFrame("Conversations Form");
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        frame.setIconImage(icon);
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
 

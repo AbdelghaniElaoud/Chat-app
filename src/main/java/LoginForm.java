@@ -29,6 +29,8 @@ public class LoginForm extends JDialog{
         setMinimumSize(new Dimension(450,474));
         setModal(true);
         setLocationRelativeTo(parent);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         btnOk.addActionListener(e -> {

@@ -516,5 +516,26 @@ public class UserDaoImpl implements UserDao {
         return userId;
     }
 
+    @Override
+    public void createGroupChat(Long adminId, String groupChatName, List<Long> userConversations) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+
+            Conversation conversation = new Conversation(groupChatName, LocalDateTime.now(), ConversationType.GROUP, null);
+            session.persist(conversation);
+            sendMessage(adminId, conversation.getConversationId(), "Getting Started", null);
+
+            userConversations.add(adminId);
+            for (Long id : userConversations) {
+                session.persist(new UserConversation(session.find(User.class, id), conversation, Objects.equals(id, adminId)));
+            }
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+    }
+
 
 }

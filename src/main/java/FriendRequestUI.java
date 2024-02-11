@@ -23,6 +23,8 @@ public class FriendRequestUI extends JFrame {
         this.session = HibernateUtil.getSessionFactory().getCurrentSession();
         setTitle("Friend Requests");
         setSize(300, 200);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 

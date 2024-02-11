@@ -36,4 +36,5 @@ public interface UserDao {
     List<UserConversation> getUserConversationOfConversationById(Long userId);
 
     Long getUserIdByName(String name);
+    void createGroupChat(Long adminId, String groupChatName, List<Long> userConversation);
 }

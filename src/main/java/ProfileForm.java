@@ -23,6 +23,8 @@ public class ProfileForm extends JDialog{
         setMinimumSize(new Dimension(490,474));
         setModal(true);
         setLocationRelativeTo(jFrame);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         init();
 

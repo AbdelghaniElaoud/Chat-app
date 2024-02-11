@@ -21,8 +21,10 @@ public class SendFriendRequestsUI extends JFrame {
 
     public SendFriendRequestsUI(List<User> nonFriendsList, User user) {
         this.session = HibernateUtil.getSessionFactory().getCurrentSession();
-        setTitle("Friend Requests");
+        setTitle("Send Friend Requests");
         setSize(300, 200);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 

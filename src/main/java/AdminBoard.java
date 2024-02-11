@@ -22,6 +22,8 @@ public class AdminBoard extends JFrame{
         setTitle("Dashboard");
         setContentPane(adminPanel);
         setMinimumSize(new Dimension(450,474));
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        setIconImage(icon);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);

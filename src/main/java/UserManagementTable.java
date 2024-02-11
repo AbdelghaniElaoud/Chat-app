@@ -23,6 +23,8 @@ public class UserManagementTable extends JFrame{
 
         frame.setTitle("User Management");
         frame.setLocationRelativeTo(jFrame);
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Electro-Market.ma\\IdeaProjects\\JakartaEESchoolManagement\\src\\main\\resources\\icon.png");
+        frame.setIconImage(icon);
         frame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 
         UserDaoImpl userDao = new UserDaoImpl();
